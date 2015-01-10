@@ -11,12 +11,12 @@ describe("Persistent Node Chat Server", function() {
   beforeEach(function(done) {
     dbConnection = mysql.createConnection({
       user: "root",
-      password: "",
+      password: "pass",
       database: "chat"
     });
     dbConnection.connect();
 
-       var tablename = ""; // TODO: fill this out
+       var tablename = "messages"; // TODO: fill this out
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
@@ -37,9 +37,9 @@ describe("Persistent Node Chat Server", function() {
       request({ method: "POST",
               uri: "http://127.0.0.1:3000/classes/messages",
               json: {
-                username: "Valjean",
+                userid: 1,
                 message: "In mercy's name, three days is all I need.",
-                roomname: "Hello"
+                room: "Hello"
               }
       }, function () {
         // Now if we look in the database, we should find the
