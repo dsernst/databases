@@ -6,19 +6,12 @@ CREATE TABLE messages (
   id int(5) NOT NULL auto_increment,
   date TIMESTAMP NOT NULL,
   text varchar(140) NOT NULL,
-  roomid int(3) NOT NULL,
+  room varchar(25) NOT NULL,
   userid int(5) NOT NULL,
   PRIMARY KEY (id)
 );
 
 /* Create other tables and define schemas for them here! */
-
-CREATE TABLE rooms (
-  id int(3) NOT NULL auto_increment,
-  name varchar(25) NOT NULL,
-  PRIMARY KEY (id)
-);
-
 
 CREATE TABLE users (
   id int(5) NOT NULL auto_increment,
