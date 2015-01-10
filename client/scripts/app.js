@@ -21,10 +21,11 @@ var sanitizeObj = function(object) {
 };
 
 var display = function () {
+  console.log("inside display function")
   $.get(serverUrl + "classes/messages/",
     {"where": {"roomname": room}, order: "-createdAt", limit: 100},
     function (data) {
-      console.log(data)
+      console.log('what the client sees',data)
       $('.chat').html('');
       for (var i = 0; i < data.results.length; i++) {
         var $li = $("<li>");
@@ -79,7 +80,9 @@ var display = function () {
       });
 
     }
-  );
+  ).fail(function(err){
+      throw err;
+    });
 };
 var newRoom = true;
 display();
@@ -125,8 +128,8 @@ var getRooms = function() {
     }
   );
 };
-getRooms();
-setInterval(getRooms, 15000);
+// getRooms();
+// setInterval(getRooms, 15000);
 
 $(document).ready(function() {
   $('.textSend').on('click', function() {

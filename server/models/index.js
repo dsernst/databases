@@ -5,11 +5,14 @@ module.exports = {
     get: function (req, res) {
       db.query('select * from messages', function(err, result){
         if (err) throw err;
-        console.log(result);
-        // res.end(result)
+        console.log('models/index.js -> I am messages.get function')
+        console.log('result = ',result);
+        // res.send(result)
+        res.send({results: result})
       });
     }, // a function which produces all the messages
-    post: function () {} // a function which can be used to insert a message into the database
+    post: function () {
+    } // a function which can be used to insert a message into the database
   },
 
   users: {
