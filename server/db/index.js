@@ -10,4 +10,3 @@ module.exports = mysql.createConnection({
   password : 'pass',
   database : 'chat'
 });
-

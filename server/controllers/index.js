@@ -1,6 +1,5 @@
 var models = require('../models');
-var bluebird = require('bluebird');
-
+// var bluebird = require('bluebird');
 
 
 module.exports = {
@@ -8,7 +7,9 @@ module.exports = {
     get: function (req, res) {
       var data = models.messages.get(req, res)
     }, // a function which handles a get request for all messages
-    post: function (req, res) {} // a function which handles posting a message to the database
+    post: function (req, res) {
+
+    } // a function which handles posting a message to the database
   },
 
   users: {
