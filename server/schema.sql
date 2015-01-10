@@ -7,7 +7,7 @@ CREATE TABLE messages (
   date TIMESTAMP NOT NULL,
   text varchar(140) NOT NULL,
   room varchar(25) NOT NULL,
-  userid int(5) NOT NULL,
+  username varchar(15) NOT NULL,
   PRIMARY KEY (id)
 );
 

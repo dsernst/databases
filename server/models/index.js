@@ -3,12 +3,10 @@ var db = require('../db');
 module.exports = {
   messages: {
     get: function (req, res) {
-      db.query('select * from messages', function(err, result){
+      db.query('select * from messages;', function(err, result){
         if (err) throw err;
-        console.log('models/index.js -> I am messages.get function')
         console.log('result = ',result);
-        // res.send(result)
-        res.send({results: result})
+        res.send({results: result});
       });
     }, // a function which produces all the messages
     post: function () {

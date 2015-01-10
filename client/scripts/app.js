@@ -21,7 +21,6 @@ var sanitizeObj = function(object) {
 };
 
 var display = function () {
-  console.log("inside display function")
   $.get(serverUrl + "classes/messages/",
     {"where": {"roomname": room}, order: "-createdAt", limit: 100},
     function (data) {
