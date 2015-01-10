@@ -8,7 +8,7 @@ module.exports = {
       var data = models.messages.get(req, res)
     }, // a function which handles a get request for all messages
     post: function (req, res) {
-
+      models.messages.post(req, res)
     } // a function which handles posting a message to the database
   },
 
