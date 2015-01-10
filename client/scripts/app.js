@@ -21,7 +21,7 @@ var sanitizeObj = function(object) {
 };
 
 var display = function () {
-  $.get(serverUrl,
+  $.get(serverUrl + "classes/messages/",
     {"where": {"roomname": room}, order: "-createdAt", limit: 100},
     function (data) {
       console.log(data)
@@ -60,7 +60,7 @@ var display = function () {
             open: function() {
               var element = $(this);
               console.log(element.text());
-              $.get(serverUrl,
+              $.get(serverUrl + "classes/messages/",
                 {where: {'username': element.text()}, limit: 1, order: "-createdAt"},
                 function (data) {
                   var last = data.results[0];
@@ -98,7 +98,7 @@ var send = function (text) {
     'text': text,
     'roomname': room
   };
-  $.post(serverUrl,
+  $.post(serverUrl + "classes/messages/",
     JSON.stringify(message),
     function (data) {
       console.log('chatterbox: Message sent');
