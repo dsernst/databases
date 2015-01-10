@@ -1,6 +1,6 @@
 var room = "lobby";
 var friends = {};
-var parseURL = 'http://127.0.0.1:3000/';
+var serverUrl = 'http://127.0.0.1:3000/';
 
 var sanitize = function(string){
   if (typeof string === "string") {
@@ -21,9 +21,10 @@ var sanitizeObj = function(object) {
 };
 
 var display = function () {
-  $.get(parseURL,
+  $.get(serverUrl,
     {"where": {"roomname": room}, order: "-createdAt", limit: 100},
     function (data) {
+      console.log(data)
       $('.chat').html('');
       for (var i = 0; i < data.results.length; i++) {
         var $li = $("<li>");
@@ -59,7 +60,7 @@ var display = function () {
             open: function() {
               var element = $(this);
               console.log(element.text());
-              $.get(parseURL,
+              $.get(serverUrl,
                 {where: {'username': element.text()}, limit: 1, order: "-createdAt"},
                 function (data) {
                   var last = data.results[0];
@@ -97,7 +98,7 @@ var send = function (text) {
     'text': text,
     'roomname': room
   };
-  $.post(parseURL,
+  $.post(serverUrl,
     JSON.stringify(message),
     function (data) {
       console.log('chatterbox: Message sent');
@@ -107,7 +108,7 @@ var send = function (text) {
 };
 
 var getRooms = function() {
-  $.get(parseURL,
+  $.get(serverUrl,
     {limit: 100, order: "-createdAt"},
     function (data) {
       var rooms = {};
