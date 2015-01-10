@@ -1,0 +1,134 @@
+body {
+    background: #eee;
+    text-align: center;
+    padding: 0 25px;
+    font-family: arial, sans-serif;
+}
+
+#main {
+    width: 900px;
+    margin: auto;
+    text-align: left;
+    background: white;
+    padding: 20px 30px;
+    border: solid #ddd;
+    border-width: 0 1px 1px 1px;
+}
+
+#main h1 {
+    margin-top: 0;
+    font-size: 35px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#main h1 span {
+    font-style:italic;
+}
+
+#main .error {
+    border: 1px solid red;
+    background: #FDEFF0;
+    padding: 20px;
+}
+
+#main .success {
+    margin-top: 25px;
+}
+
+#main .success code {
+    font-size: 12px;
+    color: green;
+    line-height: 13px;
+}
+
+.custom {
+    margin-right: 20px;
+}
+
+.custom input {
+    width: 150px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.chat {
+    height: 600px;
+    overflow-y: scroll;
+    width: 78%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #eee;
+    display: inline-block;
+}
+
+.friendslist {
+    height: 600px;
+    overflow-y: scroll;
+    width: 18%;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #eee;
+    display: inline-block;
+}
+
+.friendslist ul {
+    padding: 0;
+}
+
+.chat li {
+    margin: 5px 0px;
+    list-style-type: none;
+}
+
+.chat li:hover {
+    background-color: #ddd;
+}
+
+.chat li.friend .msg {
+    color: green;
+}
+
+.chat .username {
+    font-weight: 800;
+    margin-right: 5px;
+}
+
+.chat .username:hover {
+    color: green;
+}
+
+.chat .time {
+    float: right;
+    font-size: 70%;
+}
+
+.friendslist li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+
+.inputText {
+    margin-right: 10px;
+    width: 90%;
+    height: 40px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.textSend {
+    height: 50px;
+    width: 50px;
+    float: right;
+    margin-right: 12px;
+}
+
+.spinner {
+    float: right;
+    height: 46px;
+    margin-bottom: 5px;
+}
+
+.spinner img {
+    padding: 10px;
+}

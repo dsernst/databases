@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <link href="https://code.jquery.com/ui/1.11.2/themes/flick/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <!-- your scripts -->
+    <script src="env/config.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1>chatterbox</h1>
+      <!-- Your HTML goes here! -->
+      <span class="custom">
+        <input type="text" placeholder="Custom room"><button>Switch</button>
+      </span>
+      <span>Recent: </span>
+      <select class="room" placeholder="lobby"></select>
+      <ul class="chat"></ul>
+      <div class="friendslist"><em>Friends:</em><ul></ul></div>
+      <textarea class="inputText" placeholder="Message..."></textarea>
+      <button class="textSend">Send</button>
+    </div>
+  </body>
+</html>
