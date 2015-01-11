@@ -31,7 +31,7 @@ var display = function () {
         sanitizeObj(data.results[i]);
         var username = data.results[i].username;
         var msg = data.results[i].text;
-        var time = moment(+data.results[i].createdAt).fromNow();
+        var time = moment(data.results[i].createdAt).fromNow();
         if (friends[username]) {
           $li.addClass("friend");
         }
