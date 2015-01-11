@@ -24,7 +24,6 @@ var display = function () {
   $.get(serverUrl + "classes/messages/",
     {"where": {"roomname": room}, order: "-createdAt", limit: 100},
     function (data) {
-      console.log('what the client sees',data)
       $('.chat').html('');
       for (var i = 0; i < data.results.length; i++) {
         var $li = $("<li>");
@@ -100,13 +99,17 @@ var send = function (text) {
     'text': text,
     'roomname': room
   };
-  $.post(serverUrl + "classes/messages/",
-    JSON.stringify(message),
-    function (data) {
+  console.log(message)
+  $.ajax(serverUrl + "classes/messages/",
+  {
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify(message),
+    success: function (data) {
       console.log('chatterbox: Message sent');
       display();
     }
-  );
+  });
 };
 
 var getRooms = function() {
